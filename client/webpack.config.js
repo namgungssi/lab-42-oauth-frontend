@@ -11,11 +11,11 @@ const ExtractPlugin = require('extract-text-webpack-plugin');
 
 const {EnvironmentPlugin, DefinePlugin} = require('webpack');
 
-let production = process.env.NODE_ENV === "production";
+let production = process.env.NODE_ENV === 'production';
 
 let plugins = [
   new HTMLPlugin({
-    template: `${__dirname}/src/index.html`
+    template: `${__dirname}/src/index.html`,
   }),
   new ExtractPlugin('bundle.[hash].css'),
   new EnvironmentPlugin(['NODE_ENV']),
@@ -24,8 +24,8 @@ let plugins = [
     '__GOOGLE_CLIENT_SECRET__': JSON.stringify(process.env.GOOGLE_CLIENT_SECRET),
     '__AUTH_URL__': JSON.stringify(process.env.AUTH_URL),
     '__API_URL__': JSON.stringify(process.env.API_URL),
-    '__DEBUG__': JSON.stringify(! production)
-  })
+    '__DEBUG__': JSON.stringify(! production),
+  }),
 ];
 
 module.exports = {
@@ -36,7 +36,7 @@ module.exports = {
   entry: `${__dirname}/src/main.js`,
 
   devServer: {
-    historyApiFallback:true
+    historyApiFallback: true,
   },
 
   devtool: 'source-map',
@@ -44,7 +44,7 @@ module.exports = {
   // Stick it into the "path" folder with that file name
   output: {
     filename: 'bundle.[hash].js',
-    path: `${__dirname}/build`
+    path: `${__dirname}/build`,
   },
 
   module: {
@@ -53,13 +53,13 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       // If it's a .scss file
       {
         test: /\.scss$/,
-        loader : 'style-loader!css-loader!sass-loader'
+        loader : 'style-loader!css-loader!sass-loader',
       },
-    ]
-  }
-}
+    ],
+  },
+};
