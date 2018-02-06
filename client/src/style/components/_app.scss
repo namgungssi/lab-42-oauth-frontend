@@ -1,0 +1,14 @@
+body {
+    background: white;
+    color: $black;
+
+    &:after {
+        @include shadow-bottom-fuzzy;
+    }
+}
+
+main {
+    padding: 2em;
+}
+
+@include headings();
