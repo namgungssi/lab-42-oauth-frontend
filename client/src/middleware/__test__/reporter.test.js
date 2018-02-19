@@ -8,7 +8,7 @@ let mockStore = () => {
         let {type,payload} = action;
         switch(type) {
             case "ERROR":
-                throw new Error("WAT?");
+                throw new Error("what?");
             default:
                 return state;
         }

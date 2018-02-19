@@ -1,7 +1,6 @@
-
-
 import superagent from 'superagent';
 import cookie from 'react-cookies';
+
 
 export const validate = () => (dispatch) => {
   let token = cookie.load('X-BBB-Token');

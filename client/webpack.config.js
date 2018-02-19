@@ -1,14 +1,12 @@
 'use strict';
 
 
-
 require('dotenv').config();
 
 // Dynamic Script and Style Tags
 const HTMLPlugin = require('html-webpack-plugin');
 // Makes a separate CSS bundle
 const ExtractPlugin = require('extract-text-webpack-plugin');
-
 const {EnvironmentPlugin, DefinePlugin} = require('webpack');
 
 let production = process.env.NODE_ENV === 'production';
@@ -28,8 +26,8 @@ let plugins = [
   }),
 ];
 
-module.exports = {
 
+module.exports = {
   plugins,
 
   // Load this and everythning it cares about

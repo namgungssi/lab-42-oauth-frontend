@@ -2,7 +2,7 @@ let reporter = store => next => action => {
 
     try {
         let result = next(action);
-        if ( __DEBUG__ ) { console.log("__STATE__", store.getState()); }
+        if (__DEBUG__) { console.log("__STATE__", store.getState()); }
         return result;
     }
 
