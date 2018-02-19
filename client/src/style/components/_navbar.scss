@@ -1,43 +1,42 @@
 nav {
-    background: ivory;
-    color: black;
-    height: 2em;
-    line-height: 2em;
-    width: 100%;
+  background:#000;
+  height:2em;
+  line-height:2em;
+  width: 100%;
 
-    ul {
-        display:flex;
-        flex-direction:row;
-        justify-content: space-around;
+  ul {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
 
-        li {
-            padding: 0 1em;
-            position: relative;
-            min-width: 100px;
-            color: ivory;
-        }
-
-        li:hover {
-           background: pink;
-           color: black;
-
-           a {
-               color: #000;
-           }
-        }
+    li {
+      padding:0 1em;
+      position:relative;
+      min-width: 100px;
+      color: #ccc;
     }
 
-    a {
-        text-decoration:none;
-        color:#fff;
+    li:hover {
+      background:#ccc;
+      color: black;
 
-        &:after {
-            bottom:0;
-            content:"";
-            left:0;
-            position:absolute;
-            right:0;
-            top:0;
-        }
+      a {
+        color: #000;
+      }
     }
+  }
+
+  a {
+    text-decoration:none;
+    color:#fff;
+
+    &:after {
+      bottom:0;
+      content:"";
+      left:0;
+      position:absolute;
+      right:0;
+      top:0;
+    }
+  }
 }

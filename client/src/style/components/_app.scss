@@ -1,7 +1,7 @@
 body {
-    background: white;
-    color: $black;
-
+    background: $baseLight;
+    color: $baseDark;
+    font-family:verdana,arial;
     &:after {
         @include shadow-bottom-fuzzy;
     }
