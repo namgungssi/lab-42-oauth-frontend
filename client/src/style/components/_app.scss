@@ -1,0 +1,14 @@
+body {
+    background: $baseLight;
+    color: $baseDark;
+    font-family:verdana,arial;
+    &:after {
+        @include shadow-bottom-fuzzy;
+    }
+}
+
+main {
+    padding: 2em;
+}
+
+@include headings();
