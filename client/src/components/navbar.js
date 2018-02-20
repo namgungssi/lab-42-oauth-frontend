@@ -1,15 +1,32 @@
 import React from 'react';
+import {renderIf} from '../lib/__'
 
 class Navbar extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+    this.startChat = this.startChat.bind(this);
+  }
+
+  startChat() {
+    this.props.switchRoute('/chat');
+  }
+
+  
 
   render() {
 
     return (
 
       <nav>
-      <ul>
-      { /* TODO:  Need some dynamic links here for Logout, Profile, Chat to display only when you are logged in */ }
-      </ul>
+      {renderIf(this.props.auth,
+        <ul>
+        <li onClick={this.startChat}>Chat</li>
+        <li onClick={ () => this.props.switchRoute('/profile') }>Profile</li>
+        <li onClick={this.props.logout}>Logout</li>
+        </ul>
+      )}
       </nav>
 
     )
